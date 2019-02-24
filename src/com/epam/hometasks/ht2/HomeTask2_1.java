@@ -1,7 +1,7 @@
 package com.epam.hometasks.ht2;
 import java.util.Scanner;
 
-public class HomeTask2 {
+public class HomeTask2_1 {
     public static void main(String[] args) {
         int a, b;
         System.out.println("Input first number: ");
