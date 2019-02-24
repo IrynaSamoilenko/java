@@ -12,6 +12,6 @@ public class HomeTask2 {
         a = a + b;
         b = a - b;
         a = a - b;
-        System.out.println("CHANGES: Thee first number is "+ a + ", the second number is "+ b);
+        System.out.println("CHANGES: Thee first number is "+ a + " and the second number is "+ b);
     }
 }
