@@ -1,4 +1,4 @@
-package com.epam.lessons;
+package com.epam.lessons.les1;
 
 public class Lesson1 {
     public static void main(String[] args) {

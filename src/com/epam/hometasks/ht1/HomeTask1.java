@@ -1,4 +1,4 @@
-package com.epam.hometasks;
+package com.epam.hometasks.ht1;
 
 /**
  * Created by Samoilenko Iryna on 17.02.2019
