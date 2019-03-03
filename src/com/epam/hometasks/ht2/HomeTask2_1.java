@@ -1,6 +1,12 @@
 package com.epam.hometasks.ht2;
 import java.util.Scanner;
 
+/**
+ * Replace two variables without third variable
+ * By Samoilenko Iryna
+ * 23/02/2019
+ */
+
 public class HomeTask2_1 {
     public static void main(String[] args) {
         int a, b;
