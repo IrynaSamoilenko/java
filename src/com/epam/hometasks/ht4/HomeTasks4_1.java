@@ -25,6 +25,6 @@ public class HomeTasks4_1 {
                 storage+="'"+ch+"',";
             }
         }
-        return storage;
+        return storage.substring(0,storage.length()-1);
     }
 }
