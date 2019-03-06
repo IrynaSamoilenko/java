@@ -15,6 +15,8 @@ public class HomeTasks4_1 {
         System.out.println("The all unique symbols of this string: " + allUniqueChars(str) +'.');
 
     }
+
+    // method search unique and DOESN'T DUPLICATE symbols in the entered string
     public static String uniqueChars(String str) {
         str = str.toLowerCase();
         String storage = "";
@@ -30,7 +32,7 @@ public class HomeTasks4_1 {
         }
         return storage;
     }
-
+    // method search all unique symbols (all symbols, but in one piece) in the entered string
     public static String allUniqueChars(String str) {
         str = str.toLowerCase();
         String storage = "";
