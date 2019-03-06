@@ -11,7 +11,7 @@ public class HomeTasks4_1 {
         System.out.println("Input text -> ");
         Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();
-        System.out.println("The unique symbols of this string: " + uniqueChars(str));
+        System.out.println("The unique symbols of this string: " + uniqueChars(str) +'.');
 
     }
 
