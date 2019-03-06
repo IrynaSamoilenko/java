@@ -16,6 +16,7 @@ public class HomeTasks4_1 {
     }
 
     public static String uniqueChars(String str) {
+        str = str.toLowerCase();
         String storage = "";
         int length = str.length();
         int index = 0;

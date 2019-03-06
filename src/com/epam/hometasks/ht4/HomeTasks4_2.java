@@ -11,7 +11,7 @@ public class HomeTasks4_2 {
         System.out.println("Enter decimal number -> ");
         Scanner sc = new Scanner(System.in);
         int number = sc.nextInt();
-        System.out.println("The decimal number "+number+" in binary system equal "+convertToBinary(number));
+        System.out.println("The decimal number " + number + " in binary system equal " + convertToBinary(number));
     }
 
     public static String convertToBinary(int number) {
