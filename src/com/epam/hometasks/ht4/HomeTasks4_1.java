@@ -15,16 +15,16 @@ public class HomeTasks4_1 {
 
     }
 
-    public static String uniqueChars(String str){
+    public static String uniqueChars(String str) {
         String storage = "";
         int length = str.length();
         int index = 0;
-        while (index < length){
+        while (index < length) {
             char ch = str.charAt(index++);
-            if (!storage.contains(String.valueOf(ch))){
-                storage+="'"+ch+"',";
-            }
+            if (!storage.contains(String.valueOf(ch))) {
+                storage += "'" + ch + "',";
+                }
         }
-        return storage.substring(0,storage.length()-1);
+        return storage.substring(0, storage.length() - 1);
     }
 }
