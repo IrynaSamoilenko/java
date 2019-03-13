@@ -10,16 +10,16 @@ public class Hometask5_2 {
     public static void main(String[] args) {
         System.out.println("Enter number of array elements -> ");
         Scanner sc = new Scanner(System.in);
-        int arraySize = sc.nextInt();
-        int[] array = createArray(arraySize);
+        final int ARRAY_SIZE = sc.nextInt();
+        int[] array = createArray(ARRAY_SIZE);
         printArray(array);
         amountOddElements(array);
         sumOddElements(array);
     }
 
-    static int[] createArray(int arraySize){
-        int[] array = new int[arraySize];
-        for (int i = 0; i < arraySize; i++){
+    static int[] createArray(int ARRAY_SIZE){
+        int[] array = new int[ARRAY_SIZE];
+        for (int i = 0; i < ARRAY_SIZE; i++){
             array[i] = (((int)Math.round(Math.random()*100))-50);
         }
         return array;

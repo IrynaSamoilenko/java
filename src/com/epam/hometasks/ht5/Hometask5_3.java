@@ -10,10 +10,10 @@ public class Hometask5_3 {
     public static void main(String[] args) {
         System.out.println("Enter number of array elements -> ");
         Scanner sc = new Scanner(System.in);
-        int arraySize = sc.nextInt();
-        int[] arrayFirst = createArray(arraySize);
-        int[] arraySecond = createArray(arraySize);
-        int[] arrayResult = getArrayResult(arrayFirst, arraySecond, arraySize);
+        final int ARRAY_SIZE = sc.nextInt();
+        int[] arrayFirst = createArray(ARRAY_SIZE);
+        int[] arraySecond = createArray(ARRAY_SIZE);
+        int[] arrayResult = getArrayResult(arrayFirst, arraySecond, ARRAY_SIZE);
 
         System.out.println("Array #1: ");
         printArray(arrayFirst);
@@ -26,9 +26,9 @@ public class Hometask5_3 {
 
     }
 
-    static int[] createArray(int arraySize){
-        int[] array = new int[arraySize];
-        for (int i = 0; i < arraySize; i++){
+    static int[] createArray(int ARRAY_SIZE){
+        int[] array = new int[ARRAY_SIZE];
+        for (int i = 0; i < ARRAY_SIZE; i++){
             array[i] = (((int)Math.round(Math.random()*100))-50);
         }
         return array;
@@ -41,9 +41,9 @@ public class Hometask5_3 {
         }
     }
 
-    static int[] getArrayResult(int[] array1, int[] array2, int arraySize){
-        int [] arrayResult = new int[arraySize];
-        for (int i = 0; i < arraySize; i++){
+    static int[] getArrayResult(int[] array1, int[] array2, int ARRAY_SIZE){
+        int [] arrayResult = new int[ARRAY_SIZE];
+        for (int i = 0; i < ARRAY_SIZE; i++){
             arrayResult[i] = array1[i] + array2[i];
         }
         return arrayResult;
