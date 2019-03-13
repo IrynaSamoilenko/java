@@ -1,6 +1,6 @@
 package com.epam.hometasks.ht5;
 import java.util.Scanner;
-import java.util.Arrays;
+
 /**
  * Created by Samoilenko Iryna
  * 09/03/2019
