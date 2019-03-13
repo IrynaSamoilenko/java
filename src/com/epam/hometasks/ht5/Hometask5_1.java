@@ -2,6 +2,7 @@ package com.epam.hometasks.ht5;
 import java.util.Scanner;
 
 /**
+ * Printer array and reverse array
  * Created by Samoilenko Iryna
  * 09/03/2019
  */

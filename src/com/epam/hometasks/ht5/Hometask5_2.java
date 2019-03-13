@@ -2,6 +2,7 @@ package com.epam.hometasks.ht5;
 import java.util.Scanner;
 
 /**
+ * Counter of amount odd numbers in array and total sum of this numbers;
  * Created by Samoilenko Iryna
  * 09/03/2019
  */

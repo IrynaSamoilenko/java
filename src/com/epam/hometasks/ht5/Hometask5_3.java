@@ -2,6 +2,8 @@ package com.epam.hometasks.ht5;
 import java.util.Scanner;
 
 /**
+ * Create an array from two other arrays:
+ * arrayRes[i] = array1[i]+array2[i]
  * Created by Samoilenko Iryna
  * 09/03/2019
  */

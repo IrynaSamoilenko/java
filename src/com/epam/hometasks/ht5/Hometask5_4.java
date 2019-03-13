@@ -1,7 +1,11 @@
 package com.epam.hometasks.ht5;
 import java.util.Scanner;
 import java.util.Arrays;
+
 /**
+ * Divide array for two other arrays:
+ * array#1 consist of positive integers
+ * array#2 consist of negative integers
  * Created by Samoilenko Iryna
  * 09/03/2019
  */
