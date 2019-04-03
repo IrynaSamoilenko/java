@@ -44,6 +44,13 @@ public class Hometask5_3 {
     }
 
     static int[] getArrayResult(int[] array1, int[] array2, int ARRAY_SIZE){
+        if (array1 == null) {
+            return array2;
+        }
+        if (array2 == null) {
+            return array1;
+        }
+
         int [] arrayResult = new int[ARRAY_SIZE];
         for (int i = 0; i < ARRAY_SIZE; i++){
             arrayResult[i] = array1[i] + array2[i];
