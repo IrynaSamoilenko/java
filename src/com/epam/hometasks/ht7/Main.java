@@ -1,8 +1,11 @@
 package com.epam.hometasks.ht7;
-import com.epam.hometasks.ht6.model.SourceData;
-import com.epam.hometasks.ht7.Shape;
-import com.epam.hometasks.ht7.Triangle;
-import sun.jvm.hotspot.memory.Space;
+import com.epam.hometasks.ht7.View.View;
+import com.epam.hometasks.ht7.Model.Circle;
+import com.epam.hometasks.ht7.Model.Rectangle;
+import com.epam.hometasks.ht7.Model.Shape;
+import com.epam.hometasks.ht7.Model.Triangle;
+
+import java.util.Arrays;
 
 
 public class Main {
@@ -18,62 +21,21 @@ public class Main {
         shapes[7] = new Rectangle("yellow", 9, 6);
         shapes[8] = new Rectangle("yellow", 10, 8);
 
-        System.out.println("TOTAL AREA=" + calcTotalArea(shapes));
-        System.out.println("Circle area = " + calcCirclesArea(shapes));
-        System.out.println("Triangle area = " + calcTriangleArea(shapes));
-        System.out.println("Rectangle area = " + calcRectaangleArea(shapes));
-        printArray(shapes);
+//        System.out.println("TOTAL AREA=" + ShapeCalculator.calcTotalArea(shapes));
+//        System.out.println("Circle area = " + ShapeCalculator.calcCirclesArea(shapes));
+//        System.out.println("Triangle area = " + ShapeCalculator.calcTriangleArea(shapes));
+//        System.out.println("Rectangle area = " + ShapeCalculator.calcRectaangleArea(shapes));
+        Arrays.sort(shapes, new ColorComparator());
 
-    }
-
-    static double calcTotalArea(Shape[] shapes) {
-        double totalArea = 0;
-        for (Shape element : shapes) {
-            totalArea += element.calcArea();
+        for (Shape shape: shapes) {
+            System.out.println(shape);
         }
-        return totalArea;
-    }
 
-     static double calcCirclesArea(Shape[] shapes) {
-         double circleArea = 0;
-        for (int i = 0; i < shapes.length; i++) {
-            String actualClass = shapes[i].getClass().getName();
-            if (actualClass.contains("Circle")) {
-                circleArea += shapes[i].calcArea();
-            }
-        }
-        return circleArea;
-    }
 
-    static double calcTriangleArea(Shape[] shapes) {
-        double triangleArea = 0;
-        for (int i = 0; i < shapes.length; i++) {
-            String actualClass = shapes[i].getClass().getName();
-            if (actualClass.contains("Triangle")) {
-                triangleArea += shapes[i].calcArea();
-            }
-        }
-        return triangleArea;
-    }
 
-    static double calcRectaangleArea(Shape[] shapes) {
-        double rectangleArea = 0;
-        for (int i = 0; i < shapes.length; i++) {
-            String actualClass = shapes[i].getClass().getName();
-            if (actualClass.contains("Rectangle")) {
-                rectangleArea += shapes[i].calcArea();
-            }
-        }
-        return rectangleArea;
     }
 
 
-    static void printArray(Shape[] shapes) {
-        for (Shape element : shapes) {
-            String info = element.toString();
-            double area = element.calcArea();
-            System.out.println(info+"area=" + area+ "\n------------------------");
 
-        }
-    }
+
 }
