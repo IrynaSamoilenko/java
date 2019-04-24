@@ -1,59 +1,64 @@
 package com.epam.hometasks.ht6.model;
 
+import java.util.*;
 
 public class Books {
-    private int counter = 0;
-    private Book[] library;
-
-
-    public Books(int librarySize) {
-        this.library = new Book[librarySize];
-    }
+    private ArrayList <Book> library;
 
     public String viewBooks() {
-        if (counter ==0 ){
+        try {
+            return library.toString();
+        } catch (NullPointerException exp) {
             return "The library is empty";
         }
-        String books = "";
-        for(int i=0; i<counter; i++) {
-            books += library[i].viewBook() + "\n";
-        }
-        return books;
     }
 
-    public boolean addBook(Book newBook) {
-       if (counter >= library.length) {
-           return false;
-       }
-       library[counter++] = newBook;
-       return true;
-    }
+    public void addBook(Book newBook) { library.add(newBook);}
 
-    public Books searchByAuthor (String inputedAuthor) {
-        Books newBooks = new Books(counter);
-        for (int i=0; i<counter; i++) {
-            if(library[i].getAuthor().equalsIgnoreCase(inputedAuthor)){
-                newBooks.addBook(library[i]);
+
+    public List<Book>  filterByAuthor (String author) {
+        List<Book> newLibrary = new ArrayList<>();
+        for (Book book: library){
+            if (book.getAuthor().toLowerCase().contains(author)) {
+                newLibrary.add(book);
             }
         }
-        return newBooks;
+        return newLibrary;
     }
 
-    public Books searchByYear (int inputedYear) {
-        Books newBooks = new Books(counter);
-        for (int i=0; i<counter; i++) {
-            if(library[i].getYear()>inputedYear){
-                newBooks.addBook(library[i]);
+    public List<Book> filterByYear (int year) {
+        List<Book> newLibrary = new ArrayList<>();
+        for (Book book: library){
+            if (book.getYear() <= year){
+                newLibrary.add(book);
             }
         }
-        return newBooks;
+        return newLibrary;
     }
 
-    public void setDiscount(double inputedDiscount) {
-        System.out.println("Set a discount to" + inputedDiscount + "%");
-        for(int i=0; i<counter; i++) {
-            library[i].setBookDiscount(inputedDiscount);
+    private List<Book> getCopy(){
+        List<Book> copyLib = new ArrayList<>();
+        for(Book book: library){
+            copyLib.add(book);
         }
+        return copyLib;
     }
 
+    public List<Book> sortByAuthor(){
+        List<Book> newLib = getCopy();
+        newLib.sort(Book.COMPARE_BY_AUTHOR);
+        return newLib;
+    }
+
+    public List<Book> sortByPublisher(){
+        List<Book> newLib = getCopy();
+        newLib.sort(Book.COMPARE_BY_PUBLISHER);
+        return newLib;
+    }
+
+    public List<Book> sortByPrice(){
+        List<Book> newLib = getCopy();
+        newLib.sort(Book.COMPARE_BY_PRICE);
+        return newLib;
+    }
 }

@@ -1,6 +1,8 @@
 package com.epam.hometasks.ht6.model;
 
 
+import java.util.Comparator;
+
 public class Book {
     private static int nextId = 1;
     private int id;
@@ -15,14 +17,14 @@ public class Book {
         this.id = nextId++;
     }
 
-    public Book(String name, String author, String publisher, int year, int pages, double price) {
+    public Book(String name, String author, String publisher, String year, String pages, String price) {
         this(); //вызов конструктора по умолчанию
         this.name = name;
         this.author = author;
         this.publisher = publisher;
-        this.year = year;
-        this.pages = pages;
-        this.price = price;
+        this.year = Integer.parseInt(year);
+        this.pages = Integer.parseInt(pages);
+        this.price = Double.parseDouble(price);
     }
 
     public int getId() { return id; }
@@ -40,12 +42,35 @@ public class Book {
     public void setPages(int pages) { this.pages = pages; }
     public void setPrice(double price) { this.price = price; }
 
+    public static final Comparator<Book> COMPARE_BY_AUTHOR = new Comparator<Book>() {
+        @Override
+        public int compare(Book b1, Book b2) {
+            return b1.getAuthor().compareTo(b2.getAuthor());
+        }
+    };
+
+    public static final Comparator<Book> COMPARE_BY_PUBLISHER = new Comparator<Book>() {
+        @Override
+        public int compare(Book b1, Book b2) {
+            return b1.getPublisher().compareTo(b2.getPublisher());
+        }
+    };
+
+    public static final Comparator<Book> COMPARE_BY_PRICE = new Comparator<Book>() {
+        @Override
+        public int compare(Book b1, Book b2) {
+            if (b1.getPrice() > b2.getPrice()) return -1;
+            if (b1.getPrice() < b2.getPrice()) return 1;
+            return 0;
+        }
+    };
 
     public void setBookDiscount(double percent) {
         this.price = price*(1-percent/100);
     }
 
-    public String viewBook() {
+    @Override
+    public String toString() {
         return "ID: " + getId() +
                 "; Book: " + getName() +
                 "; Author: " + getAuthor()+

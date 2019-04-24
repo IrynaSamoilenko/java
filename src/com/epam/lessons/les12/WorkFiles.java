@@ -1,27 +1,16 @@
-package com.epam.hometasks.ht6.model;
+package com.epam.lessons.les12;
 
 import java.io.*;
 
-public class SourceData {
-    private String parthnameName;
-    private static final String parthnameFormat = ".txt";
-
-    public SourceData() {
-        this.parthnameName = "buffer";
-    }
-
-    public SourceData(String parthnameName) {
-        this.parthnameName = parthnameName;
-    }
-
-    private File file = new File (this.parthnameName+parthnameFormat);
+public class WorkFiles {
+    private File file = new File ("test.txt");
 
     public void setFile(File file) { this.file = file;}
 
 
-    public void writeFile(Books lib) {
+    public void writeFile(String text) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(file))) {
-            bw.write(lib.toString());
+            bw.write(text);
         } catch (IOException exp) {
             System.out.println(exp.getMessage());
         }
@@ -36,7 +25,7 @@ public class SourceData {
                 result.append("\n");
             }
         } catch (FileNotFoundException exp) {
-            System.out.println("Library not found!");
+            System.out.println("File not found!");
         } catch (IOException exp) {
             System.out.println(exp.getMessage());
         }
@@ -44,5 +33,5 @@ public class SourceData {
     }
 
 
-
 }
+
