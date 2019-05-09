@@ -18,7 +18,7 @@ public class SourceData {
 
     public void setFile(File file) { this.file = file;}
 
-
+// ArrayList <Book>
     public void writeFile(Books lib) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(file))) {
             bw.write(lib.toString());
